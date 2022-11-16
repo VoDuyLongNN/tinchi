@@ -13,11 +13,38 @@
             $this->view("search");
         }
 
-        public function loadResult()
+        public function loadResultMaHP()
         {
             $keywords = isset($_POST["keywords"]) ? $_POST["keywords"] : null;
 
-            $result = $this->model->loadResult($keywords);
+            $result = $this->model->loadResultMaHP($keywords);
+
+            echo $result;
+        }
+
+        public function loadResultTenHP()
+        {
+            $keywords = isset($_POST["keywords"]) ? $_POST["keywords"] : null;
+
+            $result = $this->model->loadResultTenHP($keywords);
+
+            echo $result;
+        }
+
+        public function loadResultTenKhoa()
+        {
+            $keywords = isset($_POST["keywords"]) ? $_POST["keywords"] : null;
+
+            $result = $this->model->loadResultTenKhoa($keywords);
+
+            echo $result;
+        }
+
+        public function loadResultTenGiangVien()
+        {
+            $keywords = isset($_POST["keywords"]) ? $_POST["keywords"] : null;
+
+            $result = $this->model->loadResultTenGiangVien($keywords);
 
             echo $result;
         }

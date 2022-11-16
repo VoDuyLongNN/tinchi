@@ -6,6 +6,7 @@ $(document).ready(function () {
   loadResultLSDKHP();
   loadNamHocLSDKHP();
   loadHocKyLSDKHP();
+  loadSearch();
 
   $(".year-contain").change(function () {
     if ($(this).val() == 0) {
@@ -45,9 +46,30 @@ $(document).ready(function () {
     loadHPDK();
   });
 
-  $(".search__btn").click(function () {
-    loadTraCuu();
-  });
+  var inputSearch = document.querySelector('.keywords');
+  var btnSearch = document.querySelector('.search__btn');
+  inputSearch.addEventListener('keypress', function(event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      btnSearch.click();
+    }
+  })
+
+  $(".search__Option-item").change(loadSearch());
+
+  function loadSearch() {
+    $(".search__btn").click(function () {
+      if ($(".search__Option-item").val() == "MaHP") {
+        loadTraCuuMaHP();
+      }else if($(".search__Option-item").val() == "TenHP") {
+        loadTraCuuTenHP();
+      } else if($(".search__Option-item").val() == "TenKhoa") {
+        loadTraCuuTenKhoa();
+      } else if($(".search__Option-item").val() == "TenGiangVien") {
+        loadTraCuuTenGiangVien();
+      }
+    })
+  }
 
   function loadResult() {
     let namHocChanged = $(".year-contain").val();
@@ -441,9 +463,147 @@ $(document).ready(function () {
     });
   }
 
-  function loadTraCuu() {
+  function loadTraCuuMaHP() {
     let keywords = $(".keywords").val();
-    $.post("./search/loadResult", { keywords: keywords }, function (data) {
+    $.post("./search/loadResultMaHP", { keywords: keywords }, function (data) {
+      let obj = JSON.parse(data);
+      let result = "";
+
+      obj.forEach((element) => {
+        result +=
+          "<tr>" +
+          "<td>" +
+          element.MaHP +
+          "</td>" +
+          "<td>" +
+          element.MaLHP +
+          "</td>" +
+          "<td>" +
+          element.TenHP +
+          "</td>" +
+          "<td>" +
+          element.STc +
+          "</td>" +
+          "<td>" +
+          element.Loai +
+          "</td>" +
+          "<td>" +
+          element.ThongTin +
+          "</td>" +
+          "<td>" +
+          element.GiangVien +
+          "</td>" +
+          "<td>" +
+          element.GioiHan +
+          "</td>" +
+          "<td>" +
+          element.TuNgay +
+          "</td>" +
+          "<td>" +
+          element.DenNgay +
+          "</td>" +
+          "</tr>";
+      });
+
+      $(".search__details").html(result);
+    });
+  }
+
+  function loadTraCuuTenHP() {
+    let keywords = $(".keywords").val();
+    $.post("./search/loadResultTenHP", { keywords: keywords }, function (data) {
+      let obj = JSON.parse(data);
+      let result = "";
+
+      obj.forEach((element) => {
+        result +=
+          "<tr>" +
+          "<td>" +
+          element.MaHP +
+          "</td>" +
+          "<td>" +
+          element.MaLHP +
+          "</td>" +
+          "<td>" +
+          element.TenHP +
+          "</td>" +
+          "<td>" +
+          element.STc +
+          "</td>" +
+          "<td>" +
+          element.Loai +
+          "</td>" +
+          "<td>" +
+          element.ThongTin +
+          "</td>" +
+          "<td>" +
+          element.GiangVien +
+          "</td>" +
+          "<td>" +
+          element.GioiHan +
+          "</td>" +
+          "<td>" +
+          element.TuNgay +
+          "</td>" +
+          "<td>" +
+          element.DenNgay +
+          "</td>" +
+          "</tr>";
+      });
+
+      $(".search__details").html(result);
+    });
+  }
+
+  function loadTraCuuTenKhoa() {
+    let keywords = $(".keywords").val();
+    $.post("./search/loadResultTenKhoa", { keywords: keywords }, function (data) {
+      let obj = JSON.parse(data);
+      let result = "";
+
+      obj.forEach((element) => {
+        result +=
+          "<tr>" +
+          "<td>" +
+          element.MaHP +
+          "</td>" +
+          "<td>" +
+          element.MaLHP +
+          "</td>" +
+          "<td>" +
+          element.TenHP +
+          "</td>" +
+          "<td>" +
+          element.STc +
+          "</td>" +
+          "<td>" +
+          element.Loai +
+          "</td>" +
+          "<td>" +
+          element.ThongTin +
+          "</td>" +
+          "<td>" +
+          element.GiangVien +
+          "</td>" +
+          "<td>" +
+          element.GioiHan +
+          "</td>" +
+          "<td>" +
+          element.TuNgay +
+          "</td>" +
+          "<td>" +
+          element.DenNgay +
+          "</td>" +
+          "</tr>";
+      });
+
+      $(".search__details").html(result);
+    });
+  }
+
+  function loadTraCuuTenGiangVien() {
+    let keywords = $(".keywords").val();
+    $.post("./search/loadResultTenGiangVien", { keywords: keywords }, function (data) {
       let obj = JSON.parse(data);
       let result = "";
 

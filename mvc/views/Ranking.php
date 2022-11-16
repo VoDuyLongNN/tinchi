@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Xếp Hạng</title>
+    <link rel="icon" href="public/images/logo-qnu.png" type="image/x-icon" sizes="32*32">
     <link rel="stylesheet" href="./public/css/style.css">
     <link rel="stylesheet" href="./public/css/base.css">
     <link rel="stylesheet" href="./public/css/main.css">
@@ -31,7 +32,10 @@
                         </div>
                         <div class="container__content">
                             <div class="container__content-header">
-                                <h1 class="container__content-header-title">Xếp Hạng: </h1>
+                                <div class="container__content-title">
+                                    <i class="container__content-icon fa-solid fa-tag"></i>
+                                    <span class="container__content-title-history">Xếp Hạng</span>
+                                </div>
                                 <div class="container__content-header-filter">
 
                                     <div
@@ -63,7 +67,7 @@
                             </div>
 
                             <div class="container__content-own-rank">
-                                <p class="container__content-own-rank-user">Xếp hạng của bạn: <span class="desc">99+</span></p>
+                            <i class="fa-solid fa-graduation-cap"></i><p class="container__content-own-rank-user">Xếp hạng của bạn: <span class="desc">99+</span></p>
                             </div>
 
                             <!-- <div class="container__content-search">
@@ -75,13 +79,15 @@
                             <div class="grid-3">
                                 <table class="container__content-table">
                                     <thead class="container__content-thead">
-                                        <tr>
-                                            <th class="container__content-thead-title">STT</th>
-                                            <th class="container__content-thead-title">Mã SV</th>
-                                            <th class="container__content-thead-title" style="width:300px;">Họ Tên</th>
-                                            <th class="container__content-thead-title">Lớp</th>
-                                            <th class="container__content-thead-title" style="width:200px;">Điểm trung
+                                        <tr class="container__content-thead-tr">
+                                            <th class="container__content-thead-title" style="width:50px;">STT</th>
+                                            <th class="container__content-thead-title" style="width:70px;">Mã SV</th>
+                                            <th class="container__content-thead-title" style="width:150px;">Họ Tên</th>
+                                            <th class="container__content-thead-title" style="width:50px;">Lớp</th>
+                                            <th class="container__content-thead-title" style="width:100px;">Điểm trung
                                                 bình (Hệ 10)</th>
+                                            <th class="container__content-thead-title" style="width:100px;">Điểm rèn luyện</th>
+                                            <th class="container__content-thead-title" style="width:150px;">Mức độ ưu tiên</th>
                                         </tr>
                                     </thead>
                                     <tbody class="container__content-tbody">
@@ -94,11 +100,11 @@
                 </div>
             </div>
         </div>
-
-        <?php require_once './mvc/views/pages/footer.php' ?>
     </div>
+    
     <script src="./public/js/Ranking.js"></script>
     </div>
+    <?php require_once './mvc/views/pages/footer.php' ?>
 </body>
 
 </html>

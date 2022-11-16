@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <link rel="icon" href="public/images/logo-qnu.png" type="image/x-icon" sizes="32*32">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,13 +39,15 @@
                                 <div class="search__container">
                                     <div class="search__Option">
                                         <span style="font-weight: bold;">Tìm theo: </span>
-                                        <select class="follow">
-                                            <option name="" id="">Mã HP</option>
-                                            <option name="" id="">Tên HP</option>
-                                            <option name="" id="">Tên Khoa</option>
+                                        <select class="search__Option-item">
+                                        <option name="" id="" value="">--Chọn--</option>
+                                            <option name="" id="" value="MaHP">Mã HP</option>
+                                            <option name="" id="" value="TenHP">Tên HP</option>
+                                            <option name="" id="" value="TenKhoa">Tên Khoa</option>
+                                            <option name="" id="" value="TenGiangVien">Tên Giảng viên</option>
                                         </select>
                                         <input class="keywords" type="text" placeholder="Nhập từ khóa...">
-                                        <button class="search__btn">Tìm kiếm</button>
+                                        <button class="search__btn" onclick="loadSearch()">Tìm kiếm</button>
                                     </div>
                                     <div class="search__pillar">
                                         <table class = "search__title">
@@ -79,7 +82,6 @@
     </div>
 
     <script src="./public/js/ajax.js"></script>
-
     <?php require_once './mvc/views/Pages/Footer.php' ?>
 </body>
 

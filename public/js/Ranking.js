@@ -39,15 +39,20 @@ function loatdResult() {
       items.forEach((element, index) => {
         htmls += `
                   <tr class="container__content-tbody-row">
-                    <th class="col">${index+1}</th>
+                    <th class="col container__content-tbody-row-rank">${index+1}</th>
                     <th class="col">${element.MaSV}</th>
                     <th class="col">${element.HoDem} ${element.ten}</th>
                     <th class="col">${element.MaLop}</th>
                     <th class="col">${element.dtb}</th>
+                    <th class="col">${element.diemSo}</th>
+                    <th class="col container__content-tbody-row-priortized">
+                      ${element.mucdouutien} <span> ${element.tenuutien}</span>
+                    </th>
                   </tr>
                 `;
       });
       document.querySelector(".container__content-tbody").innerHTML = htmls;
+      priortizedHandle()
       ownRankHandler()
     });
 }
@@ -66,21 +71,6 @@ function semesterChange(ojb) {
   loatdResult();
 }
 
-// search ID
-
-// function searchID() {
-//   var searchValue = document.getElementById("search").value;
-//   var th, txtValue;
-//   for (var i = 0; i < tr.length; i++) {
-//     th = tr[i].querySelectorAll("th.col")[1];
-//     if (th) {
-//       txtValue = th.textContent || th.innerText;
-//       if (txtValue.indexOf(searchValue) > -1) tr[i].style.display = "";
-//       else tr[i].style.display = "none";
-//     }
-//   }
-// }
-
 // own rank
 function ownRankHandler() {
   const idUser = document.querySelector('.header__navbar-item-identify-number')
@@ -96,3 +86,17 @@ function ownRankHandler() {
   }
 }
 
+// mouseover display priortized 
+function priortizedHandle(){
+   const priortizeds = document.querySelectorAll('.container__content-tbody-row-priortized');
+   
+   for(const priortized of priortizeds){
+      priortized.addEventListener('mouseover', function() {
+         priortized.querySelector('.container__content-tbody-row-priortized span').style.display = "block"
+      })
+      priortized.addEventListener('mouseout', function() {
+         priortized.querySelector('.container__content-tbody-row-priortized span').style.display = "none"
+      })
+   }
+
+}
