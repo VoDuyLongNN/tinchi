@@ -13,8 +13,23 @@
          AND drl.idNamHoc = '".$NamHoc."' 
          AND drl.hocKy = '".$HocKy."'
          ORDER BY dtb.dtb DESC, ut.mucdouutien DESC
-         LIMIT 50";
+         LIMIT 100";
 
+         $result = mysqli_query($this->con,$query);
+
+         $arr = array();
+
+         while($row = mysqli_fetch_assoc($result))
+         {
+            $arr[] = $row;
+         }  
+
+         return json_encode($arr);
+      }
+
+      function loadUuTien(){
+         $query = "SELECT * FROM uutien";
+         
          $result = mysqli_query($this->con,$query);
 
          $arr = array();

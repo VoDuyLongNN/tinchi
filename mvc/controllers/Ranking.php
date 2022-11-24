@@ -23,5 +23,12 @@
 
             echo $result;
         }
+
+        public function loadUuTien()
+        {
+            $result = $this->model->loadUuTien();
+
+            echo $result;
+        }
     }
 ?>

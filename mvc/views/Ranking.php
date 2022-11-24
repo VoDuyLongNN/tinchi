@@ -67,34 +67,31 @@
                             </div>
 
                             <div class="container__content-own-rank">
-                            <i class="fa-solid fa-graduation-cap"></i><p class="container__content-own-rank-user">Xếp hạng của bạn: <span class="desc">99+</span></p>
+                            <i class="fa-solid fa-graduation-cap"></i><p class="container__content-own-rank-user">Xếp hạng của bạn: <span class="desc">Không tìm thấy</span></p>
                             </div>
 
-                            <!-- <div class="container__content-search">
-                                <label for="search" class="container__content-header-filter-text">Tìm Kiếm: </label>
-                                <input type="text" name="" id="search" onkeyup="searchID()"
-                                    placeholder="Nhập mã sinh viên">
-                            </div> -->
-
-                            <div class="grid-3">
-                                <table class="container__content-table">
+                            <div class="grid-3" style="position: relative">
+                                <table class="container__content-table container__content-table-ranking">
                                     <thead class="container__content-thead">
                                         <tr class="container__content-thead-tr">
                                             <th class="container__content-thead-title" style="width:50px;">STT</th>
                                             <th class="container__content-thead-title" style="width:70px;">Mã SV</th>
                                             <th class="container__content-thead-title" style="width:150px;">Họ Tên</th>
                                             <th class="container__content-thead-title" style="width:50px;">Lớp</th>
-                                            <th class="container__content-thead-title" style="width:100px;">Điểm trung
-                                                bình (Hệ 10)</th>
+                                            <th class="container__content-thead-title" style="width:100px;">Điểm trung bình (Hệ 10)</th>
                                             <th class="container__content-thead-title" style="width:100px;">Điểm rèn luyện</th>
-                                            <th class="container__content-thead-title" style="width:150px;">Mức độ ưu tiên</th>
+                                            <th class="container__content-thead-title container__content-thead-title-priortized" style="width:150px;">Mức độ ưu tiên<i class="fa-solid fa-angles-right"></i></th>
                                         </tr>
                                     </thead>
+
                                     <tbody class="container__content-tbody">
                                     </tbody>
+                                </table>
+                                <div class="desc-priortized">
+                                    <p class="desc-priortized-title">Chi tiết</p>
+                                    <ul class="desc-priortized-list"></ul>
+                                </div>
                             </div>
-
-                            </table>
                         </div>
                     </div>
                 </div>
